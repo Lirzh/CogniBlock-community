@@ -25,7 +25,7 @@
 
 ### 环境要求
 
-- Node.js 18+ 
+- Node.js 18+
 - npm/yarn/pnpm
 
 ### 安装依赖
@@ -57,19 +57,75 @@ npm run build
 npm run start
 ```
 
+## 🐳 Docker 部署
+
+本项目支持使用 Docker 和 Docker Compose 进行容器化部署。
+
+### Docker 环境要求
+
+- Docker
+- Docker Compose
+
+#### 使用 Docker 运行
+
+##### 使用 本地 构建的镜像
+
+1. 构建 Docker 镜像：
+
+   ```bash
+   docker build -t cogni-block-community .
+   ```
+
+2. 运行容器：
+
+   ```bash
+   docker run -p 3000:3000 cogni-block-community
+   ```
+
+##### 使用托管在 ghcr 上的镜像
+
+```bash
+docker run -p 3000:3000 ghcr.io/lirzh/cogniblock-community:latest
+```
+
+#### 使用 Docker Compose 部署
+
+1. 启动服务：
+
+   ```bash
+   docker-compose up -d
+   ```
+
+2. 查看日志：
+
+   ```bash
+   docker-compose logs -f
+   ```
+
+3. 停止服务：
+
+   ```bash
+   docker-compose down
+   ```
+
+应用将在 <http://localhost:3000> 上运行。
+
 ## 🎯 主要功能
 
 ### 探索
+
 - 浏览所有知识内容
 - 按学科分类筛选
 - 搜索功能
 - 知识卡片和知识库切换
 
 ### 我的库
+
 - 个人收藏的知识内容
 - 学习进度跟踪
 
 ### 知识卡片
+
 - 支持文本、图片、语音等多种形式
 - Markdown 格式支持
 - 数学公式渲染
